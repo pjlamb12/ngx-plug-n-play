@@ -8,6 +8,7 @@
 		"build:lib:prod": "ng build --prod ngx-plug-n-play-lib",
 		"build:lib": "ng build ngx-plug-n-play-lib",
 		"test": "ng test",
+		"test:lib": "ng test ngx-plug-n-play-lib",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
 		"pack:lib": "cd dist/ngx-plug-n-play-lib && npm pack",
