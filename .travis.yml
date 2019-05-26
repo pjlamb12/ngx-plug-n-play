@@ -5,10 +5,10 @@ language: node_js
 node_js:
     - node
 script:
-    - npm run test-ci
-    - npm run build-ci
+    - npm run test:lib:ci
+    - npm run build:lib:ci
 before_deploy:
-    - cd dist/ngx-plug-n-play
+    - cd dist/ngx-plug-n-play-lib
 deploy:
     provider: npm
     email: preston.j.lamb@gmail.com
