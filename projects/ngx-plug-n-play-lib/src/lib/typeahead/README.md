@@ -28,3 +28,30 @@ Here is an example of implementing the directive:
 The `typeaheadDebounceTime` input is for a number, in milliseconds, that the component will wait after the user types before emitting the new value. It defaults to 300 milliseconds.
 
 The `typeaheadValueChanged` output gives the implementing component the updated value which can then be used for searching or whatever else you may need it for.
+
+## `pnpTypeaheadResult`
+
+The `pnpTypeaheadResult` directive should be applied to an HTML element that is used as the results of the typeahead search. There are a few inputs that should be provided as well. The directive can be applied to any element that contains text, but it will most likely be applied to `p` tags or `li` tags. It can (and most likely will) be used in conjunction with an `*ngFor` directive as well.
+
+```html
+<ul>
+	<li
+		pnpTypeaheadResult
+		[matchTerm]="matchTerm"
+		[highlightMatches]="true | false"
+		[caseInsensitiveMatch]="true | false"
+	>
+		Result content 1
+	</li>
+	<li
+		pnpTypeaheadResult
+		[matchTerm]="matchTerm"
+		[highlightMatches]="true | false"
+		[caseInsensitiveMatch]="true | false"
+	>
+		Result content 2
+	</li>
+</ul>
+```
+
+`matchTerm` should be the string that should be higlighted if it is contained in the result item. The other two inputs are booleans, allowing you to turn off matching highlights and turning on/off case sensitivity on matching. By default, the matching is case insensitive.
