@@ -1,7 +1,7 @@
 import { Directive, AfterContentInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { Subject, fromEvent } from 'rxjs';
 import { map, takeUntil, filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
-import { TypeaheadKeys } from './typeahead-keys.enum';
+import { TypeaheadKeys } from '../typeahead-keys.enum';
 
 @Directive({
 	selector: '[pnpTypeaheadInput]',
