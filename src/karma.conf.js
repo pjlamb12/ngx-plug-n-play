@@ -28,5 +28,12 @@ module.exports = function(config) {
 		browsers: ['Chrome'],
 		singleRun: false,
 		restartOnFileChange: true,
+		browsers: ['Chrome'],
+		customLaunchers: {
+			ChromeHeadlessNoSandbox: {
+				base: 'ChromeHeadless',
+				flags: ['--no-sandbox'],
+			},
+		},
 	});
 };

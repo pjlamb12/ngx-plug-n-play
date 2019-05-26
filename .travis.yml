@@ -1,0 +1,20 @@
+sudo: required
+addons:
+    chrome: stable
+language: node_js
+node_js:
+    - node
+script:
+    - npm run test-ci
+    - npm run build-ci
+before_deploy:
+    - cd dist/ngx-plug-n-play
+deploy:
+    provider: npm
+    email: preston.j.lamb@gmail.com
+    api_key:
+        secure: $NPM_KEY
+    on:
+        tags: true
+        repo: pjlamb12/ngx-plug-n-play
+        branch: travis-ci
