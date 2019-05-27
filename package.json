@@ -1,6 +1,6 @@
 {
 	"name": "ngx-plug-n-play",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -30,7 +30,7 @@
 			"git add"
 		]
 	},
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"@angular/animations": "~7.2.0",
 		"@angular/common": "~7.2.0",

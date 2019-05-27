@@ -1,5 +1,9 @@
 # Alert Toaster Module
 
+```ts
+import { AlertToasterModule, AlertToasterService } from 'ngx-plug-n-play';
+```
+
 The alert toaster module provides a service that contains a list of alerts that are accessible via an `alerts` array or an `alerts$` subject that can be subscribed to. To add an alert to the list, inject the service and do the following:
 
 ```ts
