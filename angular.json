@@ -129,6 +129,11 @@
 					"options": {
 						"tsConfig": "projects/ngx-plug-n-play-lib/tsconfig.lib.json",
 						"project": "projects/ngx-plug-n-play-lib/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"project": "projects/ngx-plug-n-play-lib/ng-package.prod.json"
+						}
 					}
 				},
 				"test": {
