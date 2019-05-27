@@ -1,10 +1,14 @@
 # ngx-plug-n-play
 
+The `ngx-plug-n-play` library is an Angular library that contains services, components, directives, pipes, etc that are easily implemented into any project. The goal is to provide functionality while not defining any default styles. Directives don't provide a template, so those will inherently use the styles defined by the user. Components will use `ng-template`, `ng-content`, and other forms of transclusion so that the user can style components to match their application.
+
+## Installation
+
 ```bash
 npm i ngx-plug-n-play
 ```
 
-The `ngx-plug-n-play` library is an Angular library that contains services, components, directives, pipes, etc that are easily implemented into any project. The goal is to provide functionality while not defining any default styles. Directives don't provide a template, so those will inherently use the styles defined by the user. Components will use `ng-template`, `ng-content`, and other forms of transclusion so that the user can style components to match their application.
+## More Info
 
 Each module is exported, so only what's needed in a given application will be imported.
 
@@ -12,5 +16,7 @@ The library contains the follwing modules:
 
 -   [Typeahead Module](./src/lib/alert-toaster/README.md)
 -   [Alert Toaster Module](./src/lib/typeahead/README.md)
+
+## Contributions
 
 Please [submit an issue](https://github.com/pjlamb12/ngx-plug-n-play/issues/new) for desired components or services or anything else to be added to the library or if any issues are found.
