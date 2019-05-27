@@ -4,4 +4,7 @@
 
 export * from './lib/typeahead/typeahead.module';
 
+export * from './lib/alert-toaster/alert-toaster.service';
+export * from './lib/alert-toaster/alert-toaster.module';
+
 export * from './lib/ngx-plug-n-play-lib.module';
