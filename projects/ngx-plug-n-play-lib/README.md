@@ -1,25 +1,16 @@
-# NgxPlugNPlayLib
+# ngx-plug-n-play
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+```bash
+npm i ngx-plug-n-play
+```
 
-## Code scaffolding
+The `ngx-plug-n-play` library is an Angular library that contains services, components, directives, pipes, etc that are easily implemented into any project. The goal is to provide functionality while not defining any default styles. Directives don't provide a template, so those will inherently use the styles defined by the user. Components will use `ng-template`, `ng-content`, and other forms of transclusion so that the user can style components to match their application.
 
-Run `ng generate component component-name --project ngx-plug-n-play-lib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-plug-n-play-lib`.
+Each module is exported, so only what's needed in a given application will be imported.
 
-> Note: Don't forget to add `--project ngx-plug-n-play-lib` or else it will be added to the default project in your `angular.json` file.
+The library contains the follwing modules:
 
-## Build
+-   [Typeahead Module](./src/lib/alert-toaster/README.md)
+-   [Alert Toaster Module](./src/lib/typeahead/README.md)
 
-Run `ng build ngx-plug-n-play-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ngx-plug-n-play-lib`, go to the dist folder `cd dist/ngx-plug-n-play-lib` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-plug-n-play-lib` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Please [submit an issue](https://github.com/pjlamb12/ngx-plug-n-play/issues/new) for desired components or services or anything else to be added to the library or if any issues are found.

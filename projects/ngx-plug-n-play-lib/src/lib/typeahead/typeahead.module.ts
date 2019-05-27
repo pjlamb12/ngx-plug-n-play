@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TypeaheadInputDirective } from './typeahead-input.directive/typeahead-input.directive';
-import { TypeaheadResultDirective } from './typeahead-result.directive/typeahead-result.directive';
+import { TypeaheadInputDirective } from './typeahead-input/typeahead-input.directive';
+import { TypeaheadResultDirective } from './typeahead-result/typeahead-result.directive';
 
 @NgModule({
 	declarations: [TypeaheadInputDirective, TypeaheadResultDirective],

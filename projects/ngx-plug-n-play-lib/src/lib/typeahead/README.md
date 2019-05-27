@@ -1,5 +1,9 @@
 # `ngx-plug-n-play` Typeahead Module
 
+```ts
+import { TypeaheadModule, TypeaheadInputDirective, TypeaheadResultDirective } from 'ngx-plug-n-play';
+```
+
 This module includes a typehead input directive and a typeahead result directive. The typeahead input directive allows you to add the typeahead functionality to an input by adding the attribute directive to the input. The typeahead result directive highlights matches for the term you provide. Below are examples of implementation.
 
 ## `pnpTypeaheadInput`
