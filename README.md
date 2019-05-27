@@ -40,13 +40,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## Add yourself as a contributor
-
-This project follows the all contributors specification. To add yourself to the table of contributors on the README.md, please use the automated script as part of your PR:
-
-```bash
-npm run add-contributor
-```
-
-Follow the prompt and commit .all-contributorsrc and README.md in the PR. If you've already added yourself to the list and are making a new type of contribution, you can run it again and select the added contribution type.
