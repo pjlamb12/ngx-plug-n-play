@@ -17,6 +17,7 @@
 		"type": "git",
 		"url": "https://github.com/pjlamb12/ngx-plug-n-play"
 	},
+	"homepage": "https://stackblitz.com/edit/ngx-plug-n-play-demo",
 	"license": "MIT",
 	"keywords": [
 		"angular",
