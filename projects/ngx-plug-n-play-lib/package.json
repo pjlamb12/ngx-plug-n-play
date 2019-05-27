@@ -1,6 +1,6 @@
 {
 	"name": "ngx-plug-n-play",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"peerDependencies": {
 		"@angular/common": ">7.2.0",
 		"@angular/core": ">7.2.0"
@@ -17,6 +17,7 @@
 		"type": "git",
 		"url": "https://github.com/pjlamb12/ngx-plug-n-play"
 	},
+	"homepage": "https://stackblitz.com/edit/ngx-plug-n-play-demo",
 	"license": "MIT",
 	"keywords": [
 		"angular",
