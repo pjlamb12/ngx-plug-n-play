@@ -14,8 +14,8 @@ Each module is exported, so only what's needed in a given application will be im
 
 The library contains the follwing modules:
 
--   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
--   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
+-   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
+-   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
 
 ## Contributions
 

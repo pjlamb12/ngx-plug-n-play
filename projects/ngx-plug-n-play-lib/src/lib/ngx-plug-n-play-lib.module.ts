@@ -5,4 +5,4 @@ import { NgModule } from '@angular/core';
 	imports: [],
 	exports: [],
 })
-export class NgxPlugNPlayLibModule {}
+export class NgxPlugNPlayModule {}
