@@ -8,28 +8,6 @@ The `ngx-plug-n-play` library is an Angular library that contains services, comp
 npm i ngx-plug-n-play
 ```
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name --project=ngx-plug-n-play-lib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-Run `npm run build:lib` to build the library project and `npm run build:lib:prod` to build the library for production.
-
-## Running unit tests
-
-Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Run `npm run test:lib` to execute the unit tests for the library via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## More Info
 
 Each module is exported, so only what's needed in a given application will be imported.
@@ -38,6 +16,31 @@ The library contains the follwing modules:
 
 -   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
 -   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
+
+## Developing Locally
+
+### Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Code scaffolding
+
+Run `ng generate component component-name --project=ngx-plug-n-play-lib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### Build
+
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build:demo` to build the demo project and `npm run build:demo:prod` to build the demo project for production.
+Run `npm run build:lib` to build the library project and `npm run build:lib:prod` to build the library for production.
+
+### Running unit tests
+
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:lib` to execute the unit tests for the library via [Karma](https://karma-runner.github.io).
+
+### Running end-to-end tests
+
+Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Contributions
 
