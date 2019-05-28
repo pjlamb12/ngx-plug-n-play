@@ -1,5 +1,5 @@
 # ngx-plug-n-play
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
@@ -35,7 +35,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://www.prestonlamb.com"><img src="https://avatars3.githubusercontent.com/u/2006222?v=4" width="100px;" alt="Preston Lamb"/><br /><sub><b>Preston Lamb</b></sub></a><br /><a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=pjlamb12" title="Tests">⚠️</a> <a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=pjlamb12" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="http://www.prestonlamb.com"><img src="https://avatars3.githubusercontent.com/u/2006222?v=4" width="100px;" alt="Preston Lamb"/><br /><sub><b>Preston Lamb</b></sub></a><br /><a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=pjlamb12" title="Tests">⚠️</a> <a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=pjlamb12" title="Code">💻</a></td><td align="center"><a href="https://wesleygrimes.com"><img src="https://avatars0.githubusercontent.com/u/324308?v=4" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=wesleygrimes" title="Code">💻</a> <a href="https://github.com/pjlamb12/ngx-plug-n-play/commits?author=wesleygrimes" title="Documentation">📖</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
