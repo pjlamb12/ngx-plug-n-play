@@ -4,11 +4,10 @@ import { AlertsToasterDemoComponent } from './alerts-toaster-demo/alerts-toaster
 import { HomeComponent } from './home/home.component';
 import { TypeaheadDemoComponent } from './typeahead-demo/typeahead-demo.component';
 
-
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'typeahead-demo', component: TypeaheadDemoComponent },
-  { path: 'alerts-toaster-demo', component: AlertsToasterDemoComponent },
+	{ path: '', component: HomeComponent },
+	{ path: 'typeahead-demo', component: TypeaheadDemoComponent },
+	{ path: 'alerts-toaster-demo', component: AlertsToasterDemoComponent },
 	{ path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
