@@ -1,7 +1,12 @@
 # ngx-plug-n-play
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+The `ngx-plug-n-play` library is an Angular library that contains services, components, directives, pipes, etc that are easily implemented into any project. The goal is to provide functionality while not defining any default styles. Directives don't provide a template, so those will inherently use the styles defined by the user. Components will use `ng-template`, `ng-content`, and other forms of transclusion so that the user can style components to match their application.
+
+## Installation
+
+```bash
+npm i ngx-plug-n-play
+```
 
 ## Development server
 
@@ -13,23 +18,30 @@ Run `ng generate component component-name --project=ngx-plug-n-play-lib` to gene
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-Run `ng build:lib` to build the library project and `ng build:lib:prod` to build the library for production.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build:lib` to build the library project and `npm run build:lib:prod` to build the library for production.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Run `ng test:lib` to execute the unit tests for the library via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:lib` to execute the unit tests for the library via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## More Info
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Each module is exported, so only what's needed in a given application will be imported.
 
-## Contributors
+The library contains the follwing modules:
+
+-   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
+-   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
+
+## Contributions
+
+Please [submit an issue](https://github.com/pjlamb12/ngx-plug-n-play/issues/new) for desired components or services or anything else to be added to the library or if any issues are found.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
