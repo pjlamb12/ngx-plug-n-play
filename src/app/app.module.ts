@@ -1,12 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AlertToasterModule, TypeaheadModule } from '../../projects/ngx-plug-n-play-lib/src/public-api';
+import { AlertsToasterDemoComponent } from './alerts-toaster-demo/alerts-toaster-demo.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { TypeaheadDemoComponent } from './typeahead-demo/typeahead-demo.component';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [BrowserModule],
-	providers: [],
+	imports: [BrowserModule, FormsModule, AppRoutingModule, TypeaheadModule, AlertToasterModule],
+	declarations: [AppComponent, MainNavComponent, HomeComponent, TypeaheadDemoComponent, AlertsToasterDemoComponent],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
