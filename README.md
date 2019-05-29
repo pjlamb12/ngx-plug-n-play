@@ -4,6 +4,11 @@
 
 The `ngx-plug-n-play` library is an Angular library that contains services, components, directives, pipes, etc that are easily implemented into any project. The goal is to provide functionality while not defining any default styles. Directives don't provide a template, so those will inherently use the styles defined by the user. Components will use `ng-template`, `ng-content`, and other forms of transclusion so that the user can style components to match their application.
 
+Demo Sites:
+
+-   [ngx-plug-n-play.netlify.com](https://ngx-plug-n-play.netlify.com)
+-   [Stackblitz Demo](https://stackblitz.com/edit/ngx-plug-n-play-demo)
+
 ## Installation
 
 ```bash
