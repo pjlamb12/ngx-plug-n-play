@@ -1,0 +1,49 @@
+<h1>Alert Toaster Demo</h1>
+
+<pnp-alerts-display>
+	<ng-template let-alert let-i="index">
+		<div class="alert alert-{{ alert.level }}" role="alert">
+			{{ alert.message }}
+			<button (click)="removeAlert(i)" type="button" class="close" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</ng-template>
+</pnp-alerts-display>
+
+<p>
+	Add test alerts
+</p>
+<div class="row">
+	<div class="col"><button (click)="addTestAlert('success')" class="btn btn-success">Success</button></div>
+	<div class="col"><button (click)="addTestAlert('warning')" class="btn btn-warning">Warning</button></div>
+	<div class="col"><button (click)="addTestAlert('danger')" class="btn btn-danger">Error</button></div>
+</div>
+
+<br />
+
+<h2>Overview</h2>
+
+<p>
+	The alert toaster module provides a service that contains a list of alerts that are accessible via an
+	<code>alerts</code> array or an <code>alerts$</code> subject that can be subscribed to. To add an alert to the list,
+	call the <code>addAlert</code> function on the service. The alert object can have whatever attributes you need to
+	use, but has optional <code>message</code> and <code>level</code> attributes by default, as those are pretty
+	standard. To remove an alert from the list, call the <code>removeAlert</code> function and pass in the index of the
+	alert you'd like to remove.
+</p>
+
+<p>
+	You can display the alerts anywhere in the app you'd like. You can do so by creating your own component or using the
+	pnp-alerts-display component. You can see an example of implementation in the HTML for this page here in Stackblitz.
+	Generally, this component would be placed in the root component HTML for an application, but could be placed
+	anywhere you desire.
+</p>
+
+<p>
+	The pnp-alerts-display component will subscribe and unsubscribe from the subject and loop over the items. The HTML
+	that you provide between the <code>ng-template</code> tags is what will be output for each alert in the list. This
+	way you can provide a Bootstrap alert if you want, like this demo uses, or your own designed alert. The
+	<code>let-i="index"</code> will give you access to the index that the item is at so you can remove the alert when
+	necessary.
+</p>

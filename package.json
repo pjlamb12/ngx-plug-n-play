@@ -5,6 +5,8 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
+		"build:demo": "ng build ngx-plug-n-play",
+		"build:demo:prod": "ng build --prod ngx-plug-n-play",
 		"build:lib:prod": "ng build --prod ngx-plug-n-play-lib",
 		"build:lib": "ng build ngx-plug-n-play-lib",
 		"test": "ng test",

@@ -1,0 +1,77 @@
+<h1>Typeahead Module Demo</h1>
+
+<input
+	pnpTypeaheadInput
+	placeholder="Search Input"
+	(valueChanged)="typeaheadValueChanged($event)"
+	type="text"
+	class="form-control"
+/>
+
+<br />
+
+<p>Typeahead Value: {{ typeaheadValue }}</p>
+
+<ul>
+	<li pnpTypeaheadResult [matchTerm]="typeaheadValue" *ngFor="let fake of fakeSearchResults">{{ fake }}</li>
+</ul>
+
+<h2>Overview</h2>
+
+<p>
+	This module includes a typehead input directive and a typeahead result directive. The typeahead input directive
+	allows you to add the typeahead functionality to an input by adding the attribute directive to the input. The
+	typeahead result directive highlights matches for the term you provide. Below are examples of implementation.
+</p>
+
+<h2><code>pnpTypeaheadInput</code></h2>
+
+<p>
+	This directive should be added to a text input. It will listen to the typing and output the value of the input after
+	a debounce time. It will ignore the following keys and not emit after they're pressed:
+</p>
+
+<ul>
+	<li>ArrowUp</li>
+	<li>ArrowDown</li>
+	<li>Esc</li>
+	<li>Enter</li>
+</ul>
+
+<p>
+	It ignores these so that you can enable traversing the results with the keyboard and can implement actions when
+	Enter is pressed. If Escape is pressed the input will lose focus.
+</p>
+
+<p>
+	You can see an example of how to implement this directive in the HTML of this page here on Stackblitz.
+</p>
+
+<p>
+	The <code>typeaheadDebounceTime</code> input is for a number, in milliseconds, that the component will wait after
+	the user types before emitting the new value. It defaults to 300 milliseconds.
+</p>
+
+<p>
+	The <code>typeaheadValueChanged</code> output gives the implementing component the updated value which can then be
+	used for searching or whatever else you may need it for.
+</p>
+
+<h2><code>pnpTypeaheadResult</code></h2>
+
+<p>
+	The <code>pnpTypeaheadResult</code> directive should be applied to an HTML element that is used as the results of
+	the typeahead search. There are a few inputs that should be provided as well. The directive can be applied to any
+	element that contains text, but it will most likely be applied to <code>p</code> tags or <code>li</code> tags. It
+	can (and most likely will) be used in conjunction with an <code>*ngFor</code> directive as well.
+</p>
+
+<p>
+	You can see an example of how to implement this directive in the HTML of this page here on Stackblitz.
+</p>
+
+<p>
+	<code>matchTerm</code> should be the string that should be higlighted if it is contained in the result item. The
+	other two inputs are booleans, allowing you to turn off matching highlights and turning on/off case sensitivity on
+	matching. By default, the matching is case insensitive.
+</p>

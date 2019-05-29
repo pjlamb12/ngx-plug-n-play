@@ -15,7 +15,8 @@
 		"lib": ["es2018", "dom"],
 		"paths": {
 			"ngx-plug-n-play-lib": ["dist/ngx-plug-n-play-lib"],
-			"ngx-plug-n-play-lib/*": ["dist/ngx-plug-n-play-lib/*"]
+			"ngx-plug-n-play-lib/*": ["dist/ngx-plug-n-play-lib/*"],
+			"@lib": ["projects/ngx-plug-n-play-lib/src"]
 		}
 	}
 }
