@@ -9,7 +9,7 @@ import { TypeaheadKeys } from '../typeahead-keys.enum';
 export class TypeaheadInputDirective implements AfterContentInit {
 	private destroy$: Subject<boolean> = new Subject<boolean>();
 
-	@Input() typeaheadDebounceTime: number = 300;
+	@Input() typeaheadDebounceTime: number = 500;
 	@Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
 	constructor(private searchInput: ElementRef) {}

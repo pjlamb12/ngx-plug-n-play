@@ -10,6 +10,15 @@ describe('Typeahead Util', () => {
 		expect(result).toBe('<strong>This</strong> is a test, <strong>this</strong> is a test');
 	});
 
+	it('should trim the matching string and highlight the matching string patterns with case insensitivity', () => {
+		const itemString = 'This is a test, this is a test';
+		const patternString = 'this ';
+
+		const result = highlightStringMatches(itemString, patternString, true);
+
+		expect(result).toBe('<strong>This</strong> is a test, <strong>this</strong> is a test');
+	});
+
 	it('should highlight the matching string patterns with case sensitivity', () => {
 		const itemString = 'This is a test, this is a test';
 		const patternString = 'this';
