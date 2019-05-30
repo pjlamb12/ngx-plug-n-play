@@ -36,8 +36,7 @@ export class TypeaheadInputDirective implements AfterContentInit {
 						ev.key !== TypeaheadKeys.ENTER &&
 						ev.key !== TypeaheadKeys.UP &&
 						ev.key !== TypeaheadKeys.DOWN &&
-						ev.key !== TypeaheadKeys.ESC &&
-						ev.key !== TypeaheadKeys.SPACE,
+						ev.key !== TypeaheadKeys.ESC,
 				),
 				debounceTime(this.typeaheadDebounceTime),
 				distinctUntilChanged(),

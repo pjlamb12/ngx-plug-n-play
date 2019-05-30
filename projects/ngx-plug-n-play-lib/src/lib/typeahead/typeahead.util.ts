@@ -1,5 +1,8 @@
 export function highlightStringMatches(itemString: string, patternString: string, caseInsensitive: boolean = true) {
-	const patternArray: string[] = patternString.split(' ');
+	const patternArray: string[] = patternString
+		.trim()
+		.split(' ')
+		.filter(item => item !== '');
 	const regExpOptions: string = caseInsensitive ? 'ig' : 'g';
 
 	for (let pattern of patternArray) {
