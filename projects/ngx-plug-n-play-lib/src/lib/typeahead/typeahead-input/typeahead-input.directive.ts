@@ -9,7 +9,7 @@ import { TypeaheadKeys } from '../typeahead-keys.enum';
 export class TypeaheadInputDirective implements AfterContentInit {
 	private destroy$: Subject<boolean> = new Subject<boolean>();
 
-	@Input() typeaheadDebounceTime: number = 300;
+	@Input() typeaheadDebounceTime: number = 500;
 	@Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
 	constructor(private searchInput: ElementRef) {}
@@ -36,7 +36,8 @@ export class TypeaheadInputDirective implements AfterContentInit {
 						ev.key !== TypeaheadKeys.ENTER &&
 						ev.key !== TypeaheadKeys.UP &&
 						ev.key !== TypeaheadKeys.DOWN &&
-						ev.key !== TypeaheadKeys.ESC,
+						ev.key !== TypeaheadKeys.ESC &&
+						ev.key !== TypeaheadKeys.SPACE,
 				),
 				debounceTime(this.typeaheadDebounceTime),
 				distinctUntilChanged(),

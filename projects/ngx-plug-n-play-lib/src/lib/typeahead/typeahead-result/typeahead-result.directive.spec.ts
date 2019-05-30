@@ -57,8 +57,8 @@ describe('TypeaheadResultDirective', () => {
 		expect(paragraphText).toBe('<strong>Test</strong> <strong>test</strong> Item 1');
 	});
 
-	it('should mark the matching pattern in the element with case sensitivity', () => {
-		component.caseInsensitiveMatch = false;
+	it('should mark the multi word matching pattern in the element with case insensitivity', () => {
+		component.caseInsensitiveMatch = true;
 		component.highlightMatches = true;
 		component.matchTerm = 'test';
 
@@ -66,7 +66,7 @@ describe('TypeaheadResultDirective', () => {
 
 		const paragraph = fixture.debugElement.query(By.css('p'));
 		const paragraphText = paragraph.nativeElement.innerHTML;
-		expect(paragraphText).toBe('Test <strong>test</strong> Item 1');
+		expect(paragraphText).toBe('<strong>Test</strong> <strong>test</strong> Item 1');
 	});
 
 	it('should leave the content of the element untouched if highlightMatches input is false', () => {

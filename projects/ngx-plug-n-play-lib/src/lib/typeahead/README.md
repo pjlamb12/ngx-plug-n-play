@@ -22,14 +22,14 @@ Here is an example of implementing the directive:
 ```html
 <input
 	pnpTypeaheadInput
-	typeaheadDebounceTime="500"
+	typeaheadDebounceTime="300"
 	(valueChanged)="typeaheadValueChanged($event)"
 	type="text"
 	class="form-control"
 />
 ```
 
-The `typeaheadDebounceTime` input is for a number, in milliseconds, that the component will wait after the user types before emitting the new value. It defaults to 300 milliseconds.
+The `typeaheadDebounceTime` input is for a number, in milliseconds, that the component will wait after the user types before emitting the new value. It defaults to 500 milliseconds.
 
 The `typeaheadValueChanged` output gives the implementing component the updated value which can then be used for searching or whatever else you may need it for.
 

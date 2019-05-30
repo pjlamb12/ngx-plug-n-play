@@ -3,4 +3,5 @@ export enum TypeaheadKeys {
 	DOWN = 'ArrowDown',
 	ESC = 'Escape',
 	ENTER = 'Enter',
+	SPACE = ' ',
 }
