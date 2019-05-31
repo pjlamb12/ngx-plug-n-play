@@ -7,6 +7,8 @@ Demo Sites:
 -   [ngx-plug-n-play.netlify.com](https://ngx-plug-n-play.netlify.com)
 -   [Stackblitz Demo](https://stackblitz.com/edit/ngx-plug-n-play-demo)
 
+> In both of these example apps, we used Bootstrap to make it look nice. However, this library does not require the use of Bootstrap or any other UI framework or requirements. You can use your own styles on all the elements.
+
 ## Installation
 
 ```bash
