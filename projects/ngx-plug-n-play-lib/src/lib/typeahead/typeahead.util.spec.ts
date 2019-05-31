@@ -75,5 +75,14 @@ describe('Typeahead Util', () => {
 			expect(arr[0]).toBe('Test');
 			expect(arr[1]).toBe('test');
 		});
+
+		it('should return an array with unique values for a case insensitive match', () => {
+			const patternString: string = 'Test test test Test';
+			const arr: string[] = buildPatternArray(patternString, false);
+
+			expect(arr.length).toBe(2);
+			expect(arr[0]).toBe('Test');
+			expect(arr[1]).toBe('test');
+		});
 	});
 });
