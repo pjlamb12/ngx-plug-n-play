@@ -20,7 +20,7 @@ export function buildPatternArray(patternString: string, caseInsensitive: boolea
 
 	const patternArray: string[] = caseInsensitive
 		? Array.from(new Set(patternArrayRaw.map(w => w.toLowerCase())))
-		: [...patternArrayRaw];
+		: Array.from(new Set(patternArrayRaw));
 
 	return patternArray;
 }
