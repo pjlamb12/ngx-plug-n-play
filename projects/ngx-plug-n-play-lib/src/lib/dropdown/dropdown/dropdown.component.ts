@@ -19,9 +19,7 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 	}
 
 	ngAfterContentInit() {
-		console.log(this.dropdownTrigger);
 		this.setUpButtonClickListener();
-		console.log(this.dropdownOptions);
 	}
 
 	toggleShowResults() {
@@ -31,6 +29,6 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 	setUpButtonClickListener() {
 		fromEvent(this.dropdownTrigger.nativeElement, 'click')
 			.pipe(takeUntil(this.destroy$))
-			.subscribe(() => (this.showResults = !this.showResults));
+			.subscribe(() => this.toggleShowResults());
 	}
 }
