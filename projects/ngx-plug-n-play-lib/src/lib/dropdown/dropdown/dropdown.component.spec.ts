@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownComponent } from './dropdown.component';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-test-host',
 	template: `
-		<pnp-dropdown>
+		<pnp-dropdown (updateShowResults)="showResults = $event">
 			<button #dropdownTrigger dropdown-trigger class="btn btn-primary">Dropdown Trigger</button>
-			<ul #dropdownOptions dropdown-options>
+			<ul #dropdownOptions dropdown-options class="{{ showResults ? 'open' : '' }}">
 				<li>Item 1</li>
 				<li>Item 2</li>
 				<li>Item 3</li>
@@ -21,6 +21,7 @@ import { By } from '@angular/platform-browser';
 class TestHostComponent {
 	@ViewChild(DropdownComponent) dropdownComponent: DropdownComponent;
 	public typeaheadDebounceTime: number = 300;
+	public showResults: boolean;
 	valueChanged(newValue: string) {}
 }
 
@@ -52,17 +53,18 @@ describe('DropdownComponent', () => {
 	});
 
 	it('should not show the dropdown options when the showResults variable is false', () => {
-		const lis = fixture.debugElement.queryAll(By.css('li'));
+		const options: ElementRef = fixture.debugElement.query(By.css('[dropdown-options]'));
 
-		expect(lis.length).toBe(0);
+		expect(options.nativeElement.classList.contains('open')).toBeFalsy();
 	});
 
 	it('should show the dropdown options when the showResults variable is true', () => {
 		component.dropdownComponent.showResults = true;
+		component.showResults = true;
 		fixture.detectChanges();
 
-		const lis = fixture.debugElement.queryAll(By.css('li'));
+		const options: ElementRef = fixture.debugElement.query(By.css('[dropdown-options]'));
 
-		expect(lis.length).toBe(4);
+		expect(options.nativeElement.classList.contains('open')).toBeTruthy();
 	});
 });

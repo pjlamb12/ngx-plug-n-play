@@ -1,0 +1,11 @@
+.dropdown-container {
+	width: 200px;
+}
+[dropdown-options] {
+	height: 0;
+	overflow: hidden;
+
+	&.open {
+		height: auto;
+	}
+}

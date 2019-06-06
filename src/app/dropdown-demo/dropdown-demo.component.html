@@ -1,11 +1,13 @@
 <h1>Dropdown Demo</h1>
 
-<pnp-dropdown>
-	<button #dropdownTrigger dropdown-trigger class="btn btn-primary">Dropdown Trigger</button>
-	<ul #dropdownOptions dropdown-options>
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-		<li>Item 4</li>
-	</ul>
-</pnp-dropdown>
+<div class="dropdown-container">
+	<pnp-dropdown (updateShowResults)="showDropdownResults = $event" [closeOnOuterClick]="true">
+		<button #dropdownTrigger dropdown-trigger class="btn btn-primary">Dropdown Trigger</button>
+		<ul #dropdownOptions dropdown-options [class.open]="showDropdownResults">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+	</pnp-dropdown>
+</div>

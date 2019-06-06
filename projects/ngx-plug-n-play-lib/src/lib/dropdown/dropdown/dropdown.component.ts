@@ -1,4 +1,15 @@
-import { Component, OnInit, ContentChild, AfterContentInit, OnDestroy, ElementRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	ContentChild,
+	AfterContentInit,
+	OnDestroy,
+	ElementRef,
+	HostListener,
+	Output,
+	EventEmitter,
+	Input,
+} from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -10,8 +21,12 @@ import { takeUntil } from 'rxjs/operators';
 export class DropdownComponent implements AfterContentInit, OnDestroy {
 	@ContentChild('dropdownTrigger') dropdownTrigger: ElementRef;
 	@ContentChild('dropdownOptions') dropdownOptions: ElementRef;
+	@Output() updateShowResults: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Input() closeOnOuterClick: boolean = true;
 	public showResults: boolean = false;
 	private destroy$: Subject<boolean> = new Subject<boolean>();
+	private isComponentClicked: boolean;
+
 	constructor() {}
 
 	ngOnDestroy() {
@@ -22,8 +37,22 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 		this.setUpButtonClickListener();
 	}
 
+	@HostListener('click')
+	clickInside() {
+		this.isComponentClicked = true;
+	}
+
+	@HostListener('document:click', ['$event'])
+	clickout(evt: Event) {
+		if (!this.isComponentClicked && this.showResults && this.closeOnOuterClick) {
+			this.toggleShowResults();
+		}
+		this.isComponentClicked = false;
+	}
+
 	toggleShowResults() {
 		this.showResults = !this.showResults;
+		this.updateShowResults.emit(this.showResults);
 	}
 
 	setUpButtonClickListener() {
