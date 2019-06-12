@@ -11,7 +11,7 @@ import {
 	Input,
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, tap } from 'rxjs/operators';
 
 @Component({
 	selector: 'pnp-dropdown',
@@ -22,6 +22,11 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 	@ContentChild('dropdownTrigger') dropdownTrigger: ElementRef;
 	@ContentChild('dropdownOptions') dropdownOptions: ElementRef;
 	@Output() updateShowResults: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Output() dropdownItemSelected: EventEmitter<{ index: number; textContent: string }> = new EventEmitter<{
+		index: number;
+		textContent: string;
+	}>();
+	@Input() hideResultsOnSelect: boolean = true;
 	@Input() closeOnOuterClick: boolean = true;
 	public showResults: boolean = false;
 	private destroy$: Subject<boolean> = new Subject<boolean>();
@@ -35,6 +40,7 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 
 	ngAfterContentInit() {
 		this.setUpButtonClickListener();
+		this.setUpListItemClickListener();
 	}
 
 	@HostListener('click')
@@ -59,5 +65,21 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 		fromEvent(this.dropdownTrigger.nativeElement, 'click')
 			.pipe(takeUntil(this.destroy$))
 			.subscribe(() => this.toggleShowResults());
+	}
+
+	setUpListItemClickListener() {
+		fromEvent(this.dropdownOptions.nativeElement, 'click')
+			.pipe(takeUntil(this.destroy$))
+			.subscribe((evt: any) => this.itemSelected(evt));
+	}
+
+	itemSelected(evt: any) {
+		const lisArray = Array.from(this.dropdownOptions.nativeElement.children);
+		const index = lisArray.indexOf(evt.target);
+		const textContent = evt.target.textContent;
+		this.dropdownItemSelected.emit({ index, textContent });
+		if (this.hideResultsOnSelect) {
+			this.toggleShowResults();
+		}
 	}
 }

@@ -1,13 +1,15 @@
 <h1>Dropdown Demo</h1>
-
 <div class="dropdown-container">
-	<pnp-dropdown (updateShowResults)="showDropdownResults = $event" [closeOnOuterClick]="true">
-		<button #dropdownTrigger dropdown-trigger class="btn btn-primary">Dropdown Trigger</button>
+	<pnp-dropdown
+		(updateShowResults)="showDropdownResults = $event"
+		[closeOnOuterClick]="true"
+		(dropdownItemSelected)="selectedItemUpdated($event)"
+	>
+		<p #dropdownTrigger dropdown-trigger>{{ triggerText }}</p>
 		<ul #dropdownOptions dropdown-options [class.open]="showDropdownResults">
-			<li>Item 1</li>
-			<li>Item 2</li>
-			<li>Item 3</li>
-			<li>Item 4</li>
+			<ng-template ngFor let-item [ngForOf]="dropdownItems" let-i="index">
+				<li>{{ item }}</li>
+			</ng-template>
 		</ul>
 	</pnp-dropdown>
 </div>
