@@ -5,10 +5,10 @@
 		[closeOnOuterClick]="true"
 		(dropdownItemSelected)="selectedItemUpdated($event)"
 	>
-		<p #dropdownTrigger dropdown-trigger>{{ triggerText }}</p>
+		<button class="btn btn-primary" #dropdownTrigger dropdown-trigger>{{ triggerText }}</button>
 		<ul #dropdownOptions dropdown-options [class.open]="showDropdownResults">
 			<ng-template ngFor let-item [ngForOf]="dropdownItems" let-i="index">
-				<li>{{ item }}</li>
+				<li *ngIf="!selectedItem || selectedItem.index !== i">{{ item }}</li>
 			</ng-template>
 		</ul>
 	</pnp-dropdown>

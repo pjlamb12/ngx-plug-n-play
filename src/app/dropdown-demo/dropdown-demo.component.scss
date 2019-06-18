@@ -4,8 +4,12 @@
 [dropdown-options] {
 	height: 0;
 	overflow: hidden;
+	list-style-type: none;
+	border: 1px solid red;
+	display: none;
 
 	&.open {
+		display: block;
 		height: auto;
 	}
 }

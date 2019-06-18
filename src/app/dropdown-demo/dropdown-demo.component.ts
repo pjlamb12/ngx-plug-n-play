@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getRealItemFromListAfterSelection } from '../../../projects/ngx-plug-n-play-lib/src/lib/dropdown/dropdown.module';
 
 @Component({
 	selector: 'pnp-dropdown-demo',
@@ -15,7 +16,7 @@ export class DropdownDemoComponent implements OnInit {
 	ngOnInit() {}
 
 	selectedItemUpdated(newItem: { index: number; textContent: string }) {
-		this.selectedItem = newItem;
+		this.selectedItem = getRealItemFromListAfterSelection(this.selectedItem, newItem);
 		this.triggerText = this.selectedItem.textContent;
 	}
 }

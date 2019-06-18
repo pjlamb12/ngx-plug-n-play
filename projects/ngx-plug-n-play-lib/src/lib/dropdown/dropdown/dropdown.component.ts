@@ -1,6 +1,5 @@
 import {
 	Component,
-	OnInit,
 	ContentChild,
 	AfterContentInit,
 	OnDestroy,
@@ -11,7 +10,8 @@ import {
 	Input,
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
+import { DropdownSelectedItem } from '../dropdown-selected-item.interface';
 
 @Component({
 	selector: 'pnp-dropdown',
@@ -22,10 +22,7 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 	@ContentChild('dropdownTrigger') dropdownTrigger: ElementRef;
 	@ContentChild('dropdownOptions') dropdownOptions: ElementRef;
 	@Output() updateShowResults: EventEmitter<boolean> = new EventEmitter<boolean>();
-	@Output() dropdownItemSelected: EventEmitter<{ index: number; textContent: string }> = new EventEmitter<{
-		index: number;
-		textContent: string;
-	}>();
+	@Output() dropdownItemSelected: EventEmitter<DropdownSelectedItem> = new EventEmitter<DropdownSelectedItem>();
 	@Input() hideResultsOnSelect: boolean = true;
 	@Input() closeOnOuterClick: boolean = true;
 	public showResults: boolean = false;
