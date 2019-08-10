@@ -5,8 +5,11 @@
 	height: 0;
 	overflow: hidden;
 	list-style-type: none;
-	border: 1px solid red;
+	border: 1px solid #444;
 	display: none;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 
 	&.open {
 		display: block;
