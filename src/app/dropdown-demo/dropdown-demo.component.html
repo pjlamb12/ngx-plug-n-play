@@ -27,8 +27,11 @@
 </p>
 
 <p>
-	There is one input to the component, <code>closeOnOuterClick</code>. This makes it so that if the dropdown is open
-	and the user doesn't click on the dropdown, it will close (without selecting a new item, obviously).
+	There are two inputs to the component, <code>closeOnOuterClick</code> and <code>hideResultsOnSelect</code>. Both are
+	boolean inputs that default to true. If <code>hideResultsOnSelect</code> is true, the component emits
+	<code>true</code> when an item is selected, so the parent component can hide the options list. If
+	<code>closeOnOuterClick</code> is set to true, the same output will emit <code>true</code> again when the user
+	clicks outside the component.
 </p>
 
 <p>
