@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { DropdownComponent } from './dropdown.component';
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -52,13 +52,13 @@ describe('DropdownComponent', () => {
 		expect(component.dropdownComponent.showResults).toBeTruthy();
 	});
 
-	it('should not show the dropdown options when the showResults variable is false', () => {
+	it('should not have the open class when the showResults variable is false', () => {
 		const options: ElementRef = fixture.debugElement.query(By.css('[dropdown-options]'));
 
 		expect(options.nativeElement.classList.contains('open')).toBeFalsy();
 	});
 
-	it('should show the dropdown options when the showResults variable is true', () => {
+	it('should have the open class when the showResults variable is true', () => {
 		component.dropdownComponent.showResults = true;
 		component.showResults = true;
 		fixture.detectChanges();
@@ -67,4 +67,37 @@ describe('DropdownComponent', () => {
 
 		expect(options.nativeElement.classList.contains('open')).toBeTruthy();
 	});
+
+	it('should listen for clicks on the options', fakeAsync(() => {
+		spyOn(component.dropdownComponent, 'itemSelected');
+		spyOn(component.dropdownComponent.dropdownItemSelected, 'emit');
+		component.dropdownComponent.showResults = true;
+		component.showResults = true;
+		fixture.detectChanges();
+
+		const optionsElements: any[] = fixture.debugElement.queryAll(By.css('[dropdown-options] li'));
+
+		optionsElements[0].nativeElement.click();
+		tick();
+		expect(component.dropdownComponent.itemSelected).toHaveBeenCalled();
+	}));
+
+	it('should output the item that is clicked on in the list', fakeAsync(() => {
+		spyOn(component.dropdownComponent.dropdownItemSelected, 'emit');
+		component.dropdownComponent.showResults = true;
+		component.showResults = true;
+		fixture.detectChanges();
+		const optionsElements: any[] = fixture.debugElement.queryAll(By.css('[dropdown-options] li'));
+		const evt: Partial<Event> = {
+			target: optionsElements[0].nativeElement,
+		};
+
+		component.dropdownComponent.itemSelected(evt);
+
+		expect(component.dropdownComponent.dropdownItemSelected.emit).toHaveBeenCalled();
+		expect(component.dropdownComponent.dropdownItemSelected.emit).toHaveBeenCalledWith({
+			index: 0,
+			textContent: 'Item 1',
+		});
+	}));
 });

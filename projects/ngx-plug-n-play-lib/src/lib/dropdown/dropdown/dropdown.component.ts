@@ -67,7 +67,9 @@ export class DropdownComponent implements AfterContentInit, OnDestroy {
 	setUpListItemClickListener() {
 		fromEvent(this.dropdownOptions.nativeElement, 'click')
 			.pipe(takeUntil(this.destroy$))
-			.subscribe((evt: any) => this.itemSelected(evt));
+			.subscribe((evt: any) => {
+				this.itemSelected(evt);
+			});
 	}
 
 	itemSelected(evt: any) {
