@@ -12,7 +12,7 @@ export class AccordionComponent implements OnInit {
 	@Output() isCollapsedUpdated: EventEmitter<boolean> = new EventEmitter<boolean>();
 	@Input() triggerSelector: string = '.accordion-trigger';
 	public isCollapsed: boolean = true;
-	private trigger;
+	public trigger;
 
 	constructor(private _elRef: ElementRef) {}
 
