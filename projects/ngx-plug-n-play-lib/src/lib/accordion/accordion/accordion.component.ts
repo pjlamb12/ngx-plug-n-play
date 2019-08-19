@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input, ElementRef } from '@angular/core';
 import { trigger } from '@angular/animations';
 import { collapseAnimation } from '../../shared/animations/collapse-animation';
+import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
 	selector: 'pnp-accordion',
@@ -13,6 +15,7 @@ export class AccordionComponent implements OnInit {
 	@Input() triggerSelector: string = '.accordion-trigger';
 	public isCollapsed: boolean = true;
 	public trigger;
+	private destroy$: Subject<boolean> = new Subject<boolean>();
 
 	constructor(private _elRef: ElementRef) {}
 
@@ -21,11 +24,17 @@ export class AccordionComponent implements OnInit {
 		this.trigger = this._elRef.nativeElement.querySelector(this.triggerSelector)
 			? this._elRef.nativeElement.querySelector(this.triggerSelector)
 			: this._elRef.nativeElement.querySelector('.accordion-header-container');
-		this.trigger.addEventListener('click', this.toggleAccordionVisibility.bind(this));
+
+		fromEvent(this.trigger, 'click')
+			.pipe(takeUntil(this.destroy$))
+			.subscribe(() => {
+				this.toggleAccordionVisibility();
+			});
 	}
 
 	ngOnDestroy() {
-		this.trigger.removeEventListener('click', this.toggleAccordionVisibility, { passive: true });
+		this.destroy$.next(true);
+		this.destroy$.complete();
 	}
 
 	updateCollapsedStatus() {
