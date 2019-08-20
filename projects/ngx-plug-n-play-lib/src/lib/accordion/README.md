@@ -7,7 +7,7 @@ Here's an example of use:
 ```html
 <pnp-accordion>
 	<ng-container accordion-header>
-		<p class="accordion-trigger">Trigger Accordion</p>
+		<p class="accordion-trigger">Trigger</p>
 	</ng-container>
 	<div accordion-body>
 		<p>
