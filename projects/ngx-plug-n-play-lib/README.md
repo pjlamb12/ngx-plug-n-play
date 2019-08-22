@@ -19,10 +19,11 @@ npm i ngx-plug-n-play
 
 Each module is exported, so only what's needed in a given application will be imported.
 
-The library contains the follwing modules:
+The library contains the following modules:
 
 -   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
 -   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
+-   [Dropdown Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/dropdown/README.md)
 
 ## Contributions
 
