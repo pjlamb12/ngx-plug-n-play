@@ -1,0 +1,50 @@
+<h1>Dropdown Demo</h1>
+<div class="dropdown-container">
+	<pnp-dropdown
+		(updateShowResults)="showDropdownResults = $event"
+		[closeOnOuterClick]="true"
+		(dropdownItemSelected)="selectedItemUpdated($event)"
+	>
+		<button class="btn btn-primary" #dropdownTrigger dropdown-trigger>{{ triggerText }}</button>
+		<ul #dropdownOptions dropdown-options [class.open]="showDropdownResults">
+			<ng-template ngFor let-item [ngForOf]="dropdownItems" let-i="index">
+				<li *ngIf="!selectedItem || selectedItem.index !== i">{{ item }}</li>
+			</ng-template>
+		</ul>
+	</pnp-dropdown>
+</div>
+
+<h2>Overview</h2>
+
+<p>
+	The dropdown component allows a user to provide any dropdown trigger they'd like, and handles the toggling of the
+	dropdown. The user also determines if the dropdown is ever hidden or not. If you want, you could always have it
+	showing. The implementing developer also takes full control of the UI. The dropdown component itself doesn't apply
+	any styles at all. Via content projection, you should provide one element with an attribute of
+	<code>dropdown-trigger</code> and a template variable of <code>#dropdownTrigger</code>, and another element of
+	available options with an attribute of <code>dropdown-options</code> and a template variable of
+	<code>#dropdownOptions</code>. If these aren't provided, things won't be set up properly.
+</p>
+
+<p>
+	There are two inputs to the component, <code>closeOnOuterClick</code> and <code>hideResultsOnSelect</code>. Both are
+	boolean inputs that default to true. If <code>hideResultsOnSelect</code> is true, the component emits
+	<code>true</code> when an item is selected, so the parent component can hide the options list. If
+	<code>closeOnOuterClick</code> is set to true, the same output will emit <code>true</code> again when the user
+	clicks outside the component.
+</p>
+
+<p>
+	There are two outputs from the component as well: <code>updateShowResults</code> and
+	<code>dropdownItemSelected</code>. <code>updateShowResults</code> emits a boolean of whether the dropdown should be
+	open or closed. It starts with a value of false, and then toggles back and forth from there.
+	<code>dropdownItemSelected</code> emits the index and the text of the newly selected item. You can use those to
+	update the UI.
+</p>
+
+<p>
+	There's a function in the dropdown utility file to select the correct item from your list of options if you're
+	hiding the currently selected item. If you don't hide the currently selected item, you don't need to worry about it.
+	If you do want to hide the currently selected item, use the <code>getRealItemFromListAfterSelection</code> function
+	from the dropdown utility file. It will return the actual item from the list for you.
+</p>
