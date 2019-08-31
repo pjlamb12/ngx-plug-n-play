@@ -1,0 +1,6 @@
+<div class="accordion-header-container" [class.accordion-open]="!isCollapsed">
+	<ng-content select="[accordion-header]"></ng-content>
+</div>
+<div class="accordion-body-container" [@collapse]="isCollapsed ? 'collapsed' : 'open'">
+	<ng-content select="[accordion-body]"></ng-content>
+</div>
