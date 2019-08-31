@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
 	AlertToasterModule,
 	TypeaheadModule,
@@ -19,6 +20,7 @@ import { AccordionDemoComponent } from './accordion-demo/accordion-demo.componen
 @NgModule({
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		FormsModule,
 		AppRoutingModule,
 		TypeaheadModule,
