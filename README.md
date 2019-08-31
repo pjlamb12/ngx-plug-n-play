@@ -26,6 +26,7 @@ The library contains the following modules:
 -   [Typeahead Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/typeahead/README.md)
 -   [Alert Toaster Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/alert-toaster/README.md)
 -   [Dropdown Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/dropdown/README.md)
+-   [Accordion Module](https://github.com/pjlamb12/ngx-plug-n-play/blob/master/projects/ngx-plug-n-play-lib/src/lib/accordion/README.md)
 
 ## Developing Locally
 
